@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
-import {Pressable, View, Image, Text, button} from "react-native";
+import {Pressable, View, Image, Text, button, Button} from "react-native";
 
 
-export default function Screen01({route, navigation}){
+export default function Screen01({navigation}){
     var [image, setImage] = useState();
-    useEffect(()=>{
+    /*useEffect(()=>{
         setImage(route.params);
-    }, [route.params])
+    }, [route.params])*/
     return(
         
         <View style={{
@@ -83,7 +83,7 @@ export default function Screen01({route, navigation}){
                 }}>Ở ĐÂU RẺ HƠN HOÀN TIỀN </Text>
 
                 <View style={{flex: 1, flexDirection:"row", margin: '15px'}}>
-                    <button style={{
+                    <Pressable style={{
                         backgroundColor: "white",
                         width: "332px",
                         height:"34px",
@@ -91,10 +91,17 @@ export default function Screen01({route, navigation}){
                         border:"1px solid black",
                         color: "white",
                         fontSize:"20px",
-                        flexDirection:"row"
-                    }} >
-                        <Text>
-                        4 MÀU-CHỌN MÀU
+                        justifyContent:"center",
+                        alignContent:"center",
+                        alignItems:"center",
+                        flexDirection:"row"}}
+                        onPress={()=> navigation.navigate("Screen02")}
+                        >
+                        <Text style={{
+                            color: "black",
+                            fontSize:"20px",}}>
+                                4 MÀU- CHỌN MÀU
+                        </Text>
                         <Image
                         source={require('.//assets/Vector.png')}
                         style={{
@@ -103,16 +110,17 @@ export default function Screen01({route, navigation}){
                             height:'14px',
                             backgroundColor:"gray"
                         }}
+                        
                             />
-                        </Text>
+                        
                     
-                    </button>
+                    </Pressable>
                 </View>
                 
             </View>
             
             <View style={{flex: 1, flexDirection:"row"}}>
-            <button style={{
+            <Pressable style={{
                     backgroundColor: "#CA1536",
                     width: "326px",
                     height:"44px",
@@ -120,10 +128,19 @@ export default function Screen01({route, navigation}){
                     border:"1px solid black",
                     color: "white",
                     fontSize:"20px",
-                    flexDirection:"row"
-                }} >
-                    CHỌN MUA
-                </button>
+                    justifyContent:"center",
+                    alignContent:"center",
+                    alignItems:"center",
+                    flexDirection:"row"}}
+                    onPress={()=> navigation.navigate("Screen02")}
+                    >
+                        <Text style={{
+                            color: "black",
+                            fontSize:"20px",}}>
+                                CHỌN MUA
+                        </Text>
+            </Pressable>
+            
             </View>
             
         </View>

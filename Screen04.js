@@ -10,7 +10,7 @@ export default function Screen04(){
             alignItems:"center",
             flexDirection:"column"
         }}>
-            <Image source={require("./assets/vs_blue.png")}
+            <Image source={require("./assets/vs_red.png")}
             style={{width:"301px", height:"361px"}}
             resizeMode = "contain"
             />

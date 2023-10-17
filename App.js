@@ -9,16 +9,14 @@ import Screen02 from './Screen02';
 import Screen01 from './Screen01';
 import Screen03 from './Screen03';
 import Screen04 from './Screen04';
+import StackNavigator from './StackNavigator';
 
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName ="home">
-        <Stack.Screen name ='Screen03'  component={Screen03}/>
-         <Stack.Screen name ='Screen01'  component={Screen01}/>
-      </Stack.Navigator>
+        <StackNavigator />
     </NavigationContainer>
   );
 }

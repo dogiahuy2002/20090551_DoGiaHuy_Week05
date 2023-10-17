@@ -81,21 +81,22 @@ export default function  Screen03({navigation}){
                 }}
                 >
             </Pressable>
-            <Pressable
-                onPress={()=>{
-                    navigation.navigate('Screen04', image);
-                }}
-                style={{
-                    backgroundColor: "#5F9EA0",
-                    width: "326px",
-                    height:"44px",
-                    borderRadius: "10px",
-                    border:"1px solid red",
+            <Pressable style={{
+                backgroundColor: "#5F9EA0",
+                width: "326px",
+                height:"44px",
+                borderRadius: "10px",
+                border:"1px solid red",
+               
+                justifyContent:"center",
+                alignContent:"center",
+                alignItems:"center",
+            }}
+                onPress={()=>navigation.navigate("Screen04")}
+            >
+                <Text style={{ 
                     color: "white",
-                    fontSize:"20px"
-                }}
-            ><Text style={{color:'white'}}>XONG</Text>
-
+                    fontSize:"20px",}}> XONG</Text>
             </Pressable>
             </View>
         </View>

@@ -3,9 +3,10 @@ import {Pressable, View, Image, Text, button} from "react-native";
 
 
 
-export default function  Screen02(){
+export default function  Screen02({navigation}){
 
     const [image, setImage] = useState(require("./assets/vs_blue.png"));
+    const [text, setText] = useState("Màu: xanh");
     return (
         <View style={{flex: 1}}>
             <View style={{flex:3, justifyContent: "center", alignItems:"center", backgroundColor: "white", flexDirection:"row"}}>
@@ -17,13 +18,18 @@ export default function  Screen02(){
                 resizeMode= 'contain'
                 />
                 <Text style={{
-                    width:"164px",
+                    width:"264px",
                     height:"36px",
                     fontStyle: "Roboto",
                     fontSize: "15px",
                     fontWeight: "400",
                     lineHeight: "17.58px"
-                }}> Điện thoại Vsmart J3 Hàng chính hãng</Text>
+                }}>Điện thoại Vsmart J3 <br/>Hàng chính hãng <br/>
+                <Text>{text}</Text><br/>
+                <Text>Cung cấp bởi Tiki Tradding</Text>
+                </Text>
+    
+                
             </View>
             <View style={{flex:7, justifyContent: "center", alignItems:"center", backgroundColor: "gray"}}>
             <Text style={{
@@ -42,6 +48,7 @@ export default function  Screen02(){
                 }}
                 onPress = {()=>{
                     setImage(require("./assets/vs_silver.png"));
+                    setText("Màu: xám");
                 }}
                 >
             </Pressable>
@@ -53,6 +60,7 @@ export default function  Screen02(){
                 }}
                 onPress = {()=>{
                     setImage(require("./assets/vs_red.png"));
+                    setText("Màu: đỏ");
                 }}
                 >
             </Pressable>
@@ -64,6 +72,7 @@ export default function  Screen02(){
                 }}
                 onPress = {()=>{
                     setImage(require("./assets/vs_black.png"));
+                    setText("Màu: đen");
                 }}
                 >
             </Pressable>
@@ -75,20 +84,27 @@ export default function  Screen02(){
                 }}
                 onPress = {()=>{
                     setImage(require("./assets/vs_blue.png"));
+                    setText("Màu: xanh");
                 }}
                 >
             </Pressable>
-            <button style={{
+            <Pressable style={{
                 backgroundColor: "#5F9EA0",
                 width: "326px",
                 height:"44px",
                 borderRadius: "10px",
                 border:"1px solid red",
-                color: "white",
-                fontSize:"20px"
-            }}  >
-                XONG
-            </button>
+               
+                justifyContent:"center",
+                alignContent:"center",
+                alignItems:"center",
+            }}
+            onPress={()=>navigation.navigate("Screen03")}
+            >
+                <Text style={{ 
+                    color: "white",
+                    fontSize:"20px",}}> XONG</Text>
+            </Pressable>
             </View>
         </View>
     );
